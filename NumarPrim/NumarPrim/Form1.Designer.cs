@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {                    
             this.TitleLabel = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
@@ -62,6 +62,7 @@
             this.textbox.Name = "textbox";
             this.textbox.Size = new System.Drawing.Size(194, 20);
             this.textbox.TabIndex = 6;
+            this.textbox.TextChanged += new System.EventHandler(this.textbox_TextChanged_1);
             this.textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_KeyDown);
             // 
             // buttonAuto
@@ -86,6 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(335, 353);
             this.Controls.Add(this.ResultLabel);
             this.Controls.Add(this.buttonAuto);
@@ -102,15 +104,15 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label debugInstructionsLabel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label helloWorldLabel;
-        private System.Windows.Forms.Label TitleLabel;
-        private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.TextBox textbox;
-        private System.Windows.Forms.Button buttonAuto;
-        private System.Windows.Forms.Label ResultLabel;
+        public System.Windows.Forms.LinkLabel linkLabel1;
+        public System.Windows.Forms.Label debugInstructionsLabel;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label helloWorldLabel;
+        public System.Windows.Forms.Label TitleLabel;
+        public System.Windows.Forms.Button StartButton;
+        public System.Windows.Forms.TextBox textbox;
+        public System.Windows.Forms.Button buttonAuto;
+        public System.Windows.Forms.Label ResultLabel;
     }
 }
 

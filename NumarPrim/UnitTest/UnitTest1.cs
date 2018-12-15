@@ -1,6 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NumarPrim;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+
+
 
 
 namespace UnitTest
@@ -76,5 +82,43 @@ namespace UnitTest
 
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void ButtonClick_23_backcolor_Red()
+        {
+            //arrange
+
+           
+
+            //act
+            int actual;
+            Corp c = new Corp();
+            c.Show();
+            c.textbox.Text = "23";
+            c.StartButton.PerformClick();
+
+            
+
+            //assert
+            Assert.AreEqual(Color.Red,c.BackColor );
+        }
+        [TestMethod]
+        public void ButtonClick_22_backcolor_Green()
+        {
+            //arrange
+
+
+
+            //act
+            int actual;
+            Corp c = new Corp();
+            c.Show();
+            c.textbox.Text = "22";
+            c.StartButton.PerformClick();
+
+            //assert
+            Assert.AreEqual(Color.Green, c.BackColor);
+        }
+
+
     }
 }

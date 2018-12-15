@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ namespace NumarPrim
 
         }
 
+
         public int IsDigitsOnly(string str)
         {
             foreach (char c in str)
@@ -43,16 +45,15 @@ namespace NumarPrim
             return 1;
         }
 
-        private void textbox_TextChanged(object sender, EventArgs e)
+        public void textbox_TextChanged(object sender, EventArgs e)
         {
             if (buttonAuto.Text == "Auto:off") return;
             StartButton.PerformClick();
 
 
         }
-        
 
-        private void StartButton_Click(object sender, EventArgs e)
+        public void StartButton_Click(object sender, EventArgs e)
         {
             string str = textbox.Text;
 
@@ -69,41 +70,51 @@ namespace NumarPrim
             }
             try
             {
+
                 int x = int.Parse(textbox.Text);
+
                 if (prim(x) == 1)
                 {
                     BackColor = Color.Red;
-                    ResultLabel.Text = "Numărul este prim.";
+                    ResultLabel.Text = $"Numărul {x} este prim.";
                 }
                 else
                 {
                     BackColor = Color.Green;
-                    ResultLabel.Text = "Numărul nu este prim.";
+                    ResultLabel.Text = $"Numărul {x} nu este prim.";
                 }
             }
             catch
             {
-                ResultLabel.Text = "Otherflow.";
+                textbox.Text = "";
+                ResultLabel.Text = "Introduceti un numar mai mic decat 999.";
                 BackColor = Color.Yellow;
             }
-            
-
 
         }
 
-        private void buttonAuto_Click(object sender, EventArgs e)
+        public void buttonAuto_Click(object sender, EventArgs e)
         {
+            StartButton.PerformClick();
             if (buttonAuto.Text == "Auto:on") buttonAuto.Text = "Auto:off";
             else
                 buttonAuto.Text = "Auto:on";
         }
 
-        private void textbox_KeyDown(object sender, KeyEventArgs e)
+        public void textbox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 StartButton.PerformClick();
             }
         }
+
+        public void textbox_TextChanged_1(object sender, EventArgs e)
+        {
+            if (buttonAuto.Text == "Auto:on")
+                StartButton.PerformClick();
+        }
+
+
     }
 }
