@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
+
 
 // This is the code for your desktop app.
 // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
@@ -114,7 +117,15 @@ namespace NumarPrim
             if (buttonAuto.Text == "Auto:on")
                 StartButton.PerformClick();
         }
+        StreamReader sr = new StreamReader("in.txt");
 
+        public void buttonFile_Click(object sender, EventArgs e)
+        {
+            string line = sr.ReadLine();
+            if (line != null)
+                textbox.Text = line;
 
+        }
     }
 }
+

@@ -33,6 +33,7 @@
             this.textbox = new System.Windows.Forms.TextBox();
             this.buttonAuto = new System.Windows.Forms.Button();
             this.ResultLabel = new System.Windows.Forms.Label();
+            this.buttonFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -47,7 +48,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(107, 228);
+            this.StartButton.Location = new System.Drawing.Point(108, 220);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(115, 39);
             this.StartButton.TabIndex = 5;
@@ -58,7 +59,7 @@
             // 
             // textbox
             // 
-            this.textbox.Location = new System.Drawing.Point(64, 150);
+            this.textbox.Location = new System.Drawing.Point(64, 137);
             this.textbox.Name = "textbox";
             this.textbox.Size = new System.Drawing.Size(194, 20);
             this.textbox.TabIndex = 6;
@@ -83,12 +84,24 @@
             this.ResultLabel.Size = new System.Drawing.Size(194, 74);
             this.ResultLabel.TabIndex = 8;
             // 
+            // buttonFile
+            // 
+            this.buttonFile.Location = new System.Drawing.Point(125, 176);
+            this.buttonFile.Name = "buttonFile";
+            this.buttonFile.Size = new System.Drawing.Size(78, 38);
+            this.buttonFile.TabIndex = 9;
+            this.buttonFile.Text = "Citește din fișier";
+            this.buttonFile.UseMnemonic = false;
+            this.buttonFile.UseVisualStyleBackColor = true;
+            this.buttonFile.Click += new System.EventHandler(this.buttonFile_Click);
+            // 
             // Corp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(335, 353);
+            this.Controls.Add(this.buttonFile);
             this.Controls.Add(this.ResultLabel);
             this.Controls.Add(this.buttonAuto);
             this.Controls.Add(this.textbox);
@@ -113,6 +126,7 @@
         public System.Windows.Forms.TextBox textbox;
         public System.Windows.Forms.Button buttonAuto;
         public System.Windows.Forms.Label ResultLabel;
+        public System.Windows.Forms.Button buttonFile;
     }
 }
 
