@@ -56,6 +56,7 @@ namespace NumarPrim
 
 
         }
+        
 
         public void StartButton_Click(object sender, EventArgs e)
         {
@@ -118,21 +119,46 @@ namespace NumarPrim
             if (buttonAuto.Text == "Auto:on")
                 StartButton.PerformClick();
         }
-        StreamReader sr = new StreamReader("in.txt");
+
+        static string path="in.txt";
+        private void buttonBrowse_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "All Files (*.*)|*.*";
+            file.FilterIndex = 1;
+            file.Multiselect = true;
+
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                string sFileName = file.FileName;
+                string[] arrAllFiles = file.FileNames; //used when Multiselect = true     
+                path = sFileName;
+            }
+            MessageBox.Show(path);
+            sr = new StreamReader(path);
+
+        }
+        StreamReader sr = new StreamReader(path);
 
         public void buttonFile_Click(object sender, EventArgs e)
         {
+            
             string line = sr.ReadLine();
             if (line != null)
                 textbox.Text = line;
 
         }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Process.Start("in.txt");
+            Process.Start(path);
             this.Close();
         }
+
+       
+
     }
 }
 

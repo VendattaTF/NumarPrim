@@ -35,6 +35,8 @@
             this.ResultLabel = new System.Windows.Forms.Label();
             this.buttonFile = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.buttonBrowse = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -106,12 +108,27 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // buttonBrowse
+            // 
+            this.buttonBrowse.Location = new System.Drawing.Point(234, 60);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(82, 25);
+            this.buttonBrowse.TabIndex = 11;
+            this.buttonBrowse.Text = "Browse";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Corp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(335, 353);
+            this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonFile);
             this.Controls.Add(this.ResultLabel);
@@ -140,6 +157,8 @@
         public System.Windows.Forms.Label ResultLabel;
         public System.Windows.Forms.Button buttonFile;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonBrowse;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
