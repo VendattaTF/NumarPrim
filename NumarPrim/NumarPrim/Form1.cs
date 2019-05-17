@@ -23,8 +23,12 @@ namespace NumarPrim
         public Corp()
         {
             InitializeComponent();
-            SidePanel.Height = button2.Height;
-            SidePanel.Top = button2.Top;
+            SidePanel.Height = buttonBrowse.Height;
+            SidePanel.Top = buttonBrowse.Top;
+            SidePanel2.BackColor = Color.FromArgb(100, 96, 10, 10);
+            SidePanel2.Height = buttonBrowse.Height;
+            SidePanel2.Top = buttonBrowse.Top;
+
         }
 
         public int prim(int n)
@@ -168,6 +172,33 @@ namespace NumarPrim
         {
             this.Close();
         }
+
+
+        private void StartButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            SidePanel2.Height = StartButton.Height;
+            SidePanel2.Top = StartButton.Top;
+        }
+
+        private void buttonFile_MouseMove(object sender, MouseEventArgs e)
+        {
+            SidePanel2.Height = buttonFile.Height;
+            SidePanel2.Top = buttonFile.Top;
+        }
+
+        private void button2_MouseMove(object sender, MouseEventArgs e)
+        {
+            SidePanel2.Height = button2.Height;
+            SidePanel2.Top = button2.Top;
+        }
+
+        private void buttonAuto_MouseMove(object sender, MouseEventArgs e)
+        {
+            SidePanel2.Height = buttonAuto.Height;
+            SidePanel2.Top = buttonAuto.Top;
+        }
+
+       
     }
 }
 
