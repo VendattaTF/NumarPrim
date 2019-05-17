@@ -37,12 +37,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TitleLabel
             // 
             this.TitleLabel.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(58, 60);
+            this.TitleLabel.Location = new System.Drawing.Point(284, 89);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(203, 43);
             this.TitleLabel.TabIndex = 4;
@@ -51,9 +54,12 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(108, 220);
+            this.StartButton.FlatAppearance.BorderSize = 0;
+            this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StartButton.Location = new System.Drawing.Point(0, 437);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(115, 39);
+            this.StartButton.Size = new System.Drawing.Size(200, 93);
             this.StartButton.TabIndex = 5;
             this.StartButton.Text = "Calculeaza";
             this.StartButton.UseMnemonic = false;
@@ -62,7 +68,7 @@
             // 
             // textbox
             // 
-            this.textbox.Location = new System.Drawing.Point(64, 137);
+            this.textbox.Location = new System.Drawing.Point(435, 175);
             this.textbox.Name = "textbox";
             this.textbox.Size = new System.Drawing.Size(194, 20);
             this.textbox.TabIndex = 6;
@@ -71,7 +77,7 @@
             // 
             // buttonAuto
             // 
-            this.buttonAuto.Location = new System.Drawing.Point(12, 26);
+            this.buttonAuto.Location = new System.Drawing.Point(290, 164);
             this.buttonAuto.Name = "buttonAuto";
             this.buttonAuto.Size = new System.Drawing.Size(55, 31);
             this.buttonAuto.TabIndex = 7;
@@ -82,14 +88,14 @@
             // ResultLabel
             // 
             this.ResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.ResultLabel.Location = new System.Drawing.Point(77, 270);
+            this.ResultLabel.Location = new System.Drawing.Point(374, 342);
             this.ResultLabel.Name = "ResultLabel";
             this.ResultLabel.Size = new System.Drawing.Size(194, 74);
             this.ResultLabel.TabIndex = 8;
             // 
             // buttonFile
             // 
-            this.buttonFile.Location = new System.Drawing.Point(125, 176);
+            this.buttonFile.Location = new System.Drawing.Point(342, 301);
             this.buttonFile.Name = "buttonFile";
             this.buttonFile.Size = new System.Drawing.Size(78, 38);
             this.buttonFile.TabIndex = 9;
@@ -100,7 +106,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(234, 31);
+            this.button2.Location = new System.Drawing.Point(574, 102);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 25);
             this.button2.TabIndex = 10;
@@ -110,7 +116,7 @@
             // 
             // buttonBrowse
             // 
-            this.buttonBrowse.Location = new System.Drawing.Point(234, 60);
+            this.buttonBrowse.Location = new System.Drawing.Point(593, 240);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(82, 25);
             this.buttonBrowse.TabIndex = 11;
@@ -122,23 +128,46 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.StartButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 530);
+            this.panel1.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(525, 10);
+            this.panel2.TabIndex = 13;
+            // 
             // Corp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(335, 353);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(725, 530);
+            this.Controls.Add(this.buttonFile);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonFile);
             this.Controls.Add(this.ResultLabel);
             this.Controls.Add(this.buttonAuto);
             this.Controls.Add(this.textbox);
-            this.Controls.Add(this.StartButton);
             this.Controls.Add(this.TitleLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Corp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NrPrim";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +188,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonBrowse;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
