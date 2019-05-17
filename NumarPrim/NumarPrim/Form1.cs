@@ -23,7 +23,8 @@ namespace NumarPrim
         public Corp()
         {
             InitializeComponent();
-            BackColor = Color.LightGray;
+            SidePanel.Height = button2.Height;
+            SidePanel.Top = button2.Top;
         }
 
         public int prim(int n)
@@ -61,6 +62,8 @@ namespace NumarPrim
         public void StartButton_Click(object sender, EventArgs e)
         {
             string str = textbox.Text;
+            SidePanel.Height = StartButton.Height;
+            SidePanel.Top = StartButton.Top;
 
             for (int i = 0; i < str.Length; i++)
             {
@@ -68,7 +71,8 @@ namespace NumarPrim
                 {
                     ResultLabel.Text = "Introduceti un numar mai mic decat 999.";
                     textbox.Text = "";
-                    BackColor = Color.Yellow;
+                    ResultLabel.BackColor = Color.Yellow;
+
                     return;
                 }
 
@@ -80,12 +84,12 @@ namespace NumarPrim
 
                 if (prim(x) == 1)
                 {
-                    BackColor = Color.Red;
+                    ResultLabel.BackColor = Color.Red;
                     ResultLabel.Text = $"Numărul {x} este prim.";
                 }
                 else
                 {
-                    BackColor = Color.Green;
+                    ResultLabel.BackColor = Color.Green;
                     ResultLabel.Text = $"Numărul {x} nu este prim.";
                 }
             }
@@ -93,7 +97,7 @@ namespace NumarPrim
             {
                 textbox.Text = "";
                 ResultLabel.Text = "Introduceti un numar mai mic decat 999.";
-                BackColor = Color.Yellow;
+                ResultLabel.BackColor = Color.Yellow;
             }
 
         }
@@ -101,6 +105,8 @@ namespace NumarPrim
         public void buttonAuto_Click(object sender, EventArgs e)
         {
             StartButton.PerformClick();
+            SidePanel.Height = buttonAuto.Height;
+            SidePanel.Top = buttonAuto.Top;
             if (buttonAuto.Text == "Auto:on") buttonAuto.Text = "Auto:off";
             else
                 buttonAuto.Text = "Auto:on";
@@ -143,7 +149,8 @@ namespace NumarPrim
 
         public void buttonFile_Click(object sender, EventArgs e)
         {
-            
+            SidePanel.Height = buttonFile.Height;
+            SidePanel.Top = buttonFile.Top;
             string line = sr.ReadLine();
             if (line != null)
                 textbox.Text = line;
@@ -157,8 +164,10 @@ namespace NumarPrim
             this.Close();
         }
 
-       
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 
