@@ -28,6 +28,12 @@ namespace NumarPrim
             SidePanel2.BackColor = Color.FromArgb(100, 96, 10, 10);
             SidePanel2.Height = buttonBrowse.Height;
             SidePanel2.Top = buttonBrowse.Top;
+            try
+            {
+                sr = new StreamReader(path);
+            }
+            catch
+            { MessageBox.Show("Missed file."); }
 
         }
 
@@ -61,7 +67,7 @@ namespace NumarPrim
 
 
         }
-        
+
 
         public void StartButton_Click(object sender, EventArgs e)
         {
@@ -130,10 +136,11 @@ namespace NumarPrim
                 StartButton.PerformClick();
         }
 
-        static string path="in.txt";
+        public string path = "in.txt";
         private void buttonBrowse_Click(object sender, EventArgs e)
         {
-
+            SidePanel.Height = buttonBrowse.Height;
+            SidePanel.Top = buttonBrowse.Top;
             OpenFileDialog file = new OpenFileDialog();
             file.Filter = "All Files (*.*)|*.*";
             file.FilterIndex = 1;
@@ -146,26 +153,56 @@ namespace NumarPrim
                 path = sFileName;
             }
             MessageBox.Show(path);
-            sr = new StreamReader(path);
+            try
+            { sr = new StreamReader(path); }
+            catch { }
 
         }
-        StreamReader sr = new StreamReader(path);
+
+        StreamReader sr;
+   
 
         public void buttonFile_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = buttonFile.Height;
-            SidePanel.Top = buttonFile.Top;
-            string line = sr.ReadLine();
-            if (line != null)
-                textbox.Text = line;
+            SidePanel.Height = buttonBrowse.Height;
+            SidePanel.Top = buttonBrowse.Top;
+            string line;
+            try
+            {
+                line = sr.ReadLine();
+                if (line != null)
+                    textbox.Text = line;
+            }
+            catch
+            { MessageBox.Show("Missed file."); }
+            
+            
 
         }
         
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Process.Start(path);
-            this.Close();
+            try
+            {
+                Process.Start(path);
+                
+            }
+            catch
+            { MessageBox.Show("No file to open."); }
+            try
+            { sr.Close();
+              sr = new StreamReader(path);
+
+            }
+            catch { }
+
+            
+            
+            
+            
+            
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -198,7 +235,11 @@ namespace NumarPrim
             SidePanel2.Top = buttonAuto.Top;
         }
 
-       
+        private void buttonBrowse_MouseMove(object sender, MouseEventArgs e)
+        {
+            SidePanel2.Height = buttonBrowse.Height;
+            SidePanel2.Top = buttonBrowse.Top;
+        }
     }
 }
 

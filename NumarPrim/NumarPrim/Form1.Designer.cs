@@ -132,7 +132,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 67);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Open in.txt";
+            this.button2.Text = "Open file";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button2_MouseMove);
@@ -150,6 +150,7 @@
             this.buttonBrowse.Text = "Browse";
             this.buttonBrowse.UseVisualStyleBackColor = true;
             this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
+            this.buttonBrowse.MouseMove += new System.Windows.Forms.MouseEventHandler(this.buttonBrowse_MouseMove);
             // 
             // openFileDialog1
             // 
@@ -176,7 +177,7 @@
             // 
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.SidePanel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.SidePanel.Location = new System.Drawing.Point(0, 245);
+            this.SidePanel.Location = new System.Drawing.Point(0, 127);
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(10, 70);
             this.SidePanel.TabIndex = 15;
@@ -185,7 +186,7 @@
             // 
             this.SidePanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.SidePanel2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.SidePanel2.Location = new System.Drawing.Point(0, 169);
+            this.SidePanel2.Location = new System.Drawing.Point(0, 16);
             this.SidePanel2.Name = "SidePanel2";
             this.SidePanel2.Size = new System.Drawing.Size(10, 70);
             this.SidePanel2.TabIndex = 16;
