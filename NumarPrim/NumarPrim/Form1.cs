@@ -33,6 +33,8 @@ namespace NumarPrim
             }
             catch
             { MessageBox.Show("Missed file."); }
+            panelHIDE.SendToBack();
+            calculator1.SendToBack();
 
         }
 
@@ -236,10 +238,7 @@ namespace NumarPrim
             SidePanel2.Top = buttonBrowse.Top;
         }
 
-        private void SidePanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void button13_Click(object sender, EventArgs e)
         {
@@ -249,6 +248,20 @@ namespace NumarPrim
         private void button3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = button5.Height;
+            SidePanel.Top = button5.Top;
+            calculator1.BringToFront();
+
+        }
+
+        private void button5_MouseMove(object sender, MouseEventArgs e)
+        {
+            SidePanel2.Height = button5.Height;
+            SidePanel2.Top = button5.Top;
         }
     }
 }
