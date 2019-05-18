@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +22,11 @@ namespace NumarPrim
         public Corp()
         {
             InitializeComponent();
-            SidePanel.Height = buttonBrowse.Height;
-            SidePanel.Top = buttonBrowse.Top;
+            SidePanel.Height = StartButton.Height;
+            SidePanel.Top = StartButton.Top;
             SidePanel2.BackColor = Color.FromArgb(100, 96, 10, 10);
-            SidePanel2.Height = buttonBrowse.Height;
-            SidePanel2.Top = buttonBrowse.Top;
+            SidePanel2.Height = StartButton.Height;
+            SidePanel2.Top = StartButton.Top;
             try
             {
                 sr = new StreamReader(path);
@@ -94,7 +93,7 @@ namespace NumarPrim
 
                 if (prim(x) == 1)
                 {
-                    ResultLabel.BackColor = Color.Red;
+                    ResultLabel.BackColor = Color.Blue;
                     ResultLabel.Text = $"Numărul {x} este prim.";
                 }
                 else
@@ -160,12 +159,12 @@ namespace NumarPrim
         }
 
         StreamReader sr;
-   
+
 
         public void buttonFile_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = buttonBrowse.Height;
-            SidePanel.Top = buttonBrowse.Top;
+            SidePanel.Height = buttonFile.Height;
+            SidePanel.Top = buttonFile.Top;
             string line;
             try
             {
@@ -175,40 +174,36 @@ namespace NumarPrim
             }
             catch
             { MessageBox.Show("Missed file."); }
-            
-            
+
+
 
         }
-        
+
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
+                sr.Close();
                 Process.Start(path);
-                
+                DialogResult dialogResult = MessageBox.Show("Continue?", "Close file", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    sr = new StreamReader(path);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    
+                }
+
             }
             catch
             { MessageBox.Show("No file to open."); }
-            try
-            { sr.Close();
-              sr = new StreamReader(path);
+            
 
-            }
-            catch { }
 
-            
-            
-            
-            
-            
-            
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
 
         private void StartButton_MouseMove(object sender, MouseEventArgs e)
@@ -239,6 +234,21 @@ namespace NumarPrim
         {
             SidePanel2.Height = buttonBrowse.Height;
             SidePanel2.Top = buttonBrowse.Top;
+        }
+
+        private void SidePanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
